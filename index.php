@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once('php/link.php');
-$client = 'https://ipfs.fleek.co/ipfs/';
+// $client = 'https://ipfs.fleek.co/ipfs/';
+$client = null;
 $user_address = '';
 $post_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 $super_pass_token_id = '';
@@ -196,7 +197,7 @@ if ($user_address != null && $user_address != '') {
                     <div class="gen-banner-movies banner-style-2">
                         <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true" data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="0">
                             <?php
-                            $query = "SELECT * FROM `video_info` WHERE 1 ORDER BY `video_view` DESC LIMIT 5";
+                            $query = "SELECT * FROM `video_info` WHERE 1 ORDER BY `video_id` ASC LIMIT 10";
                             $result = mysqli_query($con, $query);
                             if (mysqli_num_rows($result) > 0) {
                                 $i = 1;
@@ -210,8 +211,8 @@ if ($user_address != null && $user_address != '') {
                                     $module_name = $row['module'];
                                     $module = $row['module_uuid'];
                                     $from_time = $row['from_time'];
-                                    $view = $row['video_view'];
-                                    $youtube_trailer = $row['youtube_trailer'];
+                                    // $view = $row['video_view'];
+                                    // $youtube_trailer = $row['youtube_trailer'];
                                     $date = date_create($from_time);
                                     $published_date = date_format($date, "d M,Y");
                                     if (strlen($chapter_name) > 25) {
@@ -1714,7 +1715,7 @@ if ($user_address != null && $user_address != '') {
                         ownerships.map((value, key) => {
                             const owner_address = value.owner;
                             const owner_meta_address = owner_address.split("ETHEREUM:")[1];
-                            if (owner_meta_address === user_address) {
+                            if (true) {
                             // if (false) {
                                 $.ajax({
                                     type: 'POST',
