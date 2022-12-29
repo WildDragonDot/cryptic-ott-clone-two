@@ -1,11 +1,12 @@
 <?php
+// finflix
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 if(!empty($_POST['name']) && !empty($_POST['video_desc']) && !empty($_POST['thumbnail_ipfs']) && !empty($_POST['video_uid']) && !empty($_POST['category'])) {
-	// $link= new mysqli("localhost","finflix","finflix","finflix");
-	$link= new mysqli("localhost","root","","fin_2021");
+	$link= new mysqli("localhost","root","","crypto-db");
+	$link= new mysqli("localhost","root","","crypto-db");
 	$VideoDetails = '/videodetails';
 	if($link->connect_error){
 		die("connection Failed" .$link->connect_error);

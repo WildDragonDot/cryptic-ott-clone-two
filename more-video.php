@@ -477,7 +477,7 @@ if (isset($_GET['module'])) {
                         ownerships.map((value, key) => {
                             const owner_address = value.owner;
                             const owner_meta_address = owner_address.split("ETHEREUM:")[1];
-                            if (owner_meta_address === user_address) {
+                            if (true) {
                             // if (false) {
                                 $.ajax({
                                     type: 'POST',
