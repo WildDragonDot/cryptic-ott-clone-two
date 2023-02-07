@@ -12,17 +12,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 	$data = array();  
     $userIP = $_SERVER['REMOTE_ADDR'];
 
-	// For main site
-	// $http_client_id = $_SERVER['HTTP_CLIENT_IP'];
-	// $http_x_forwarded_for = $_SERVER['HTTP_X_FORWARDED_FOR'];
-	// $remote_addr = $_SERVER['REMOTE_ADDR'];
-	// if(!empty($http_client_id)){
-	// 	$userIP = $http_client_id;
-	// }else if(!empty($http_x_forwarded_for)){
-	// 	$userIP = $http_x_forwarded_for;
-	// }else{
-	// 	$userIP = $remote_addr;
-	// }
+	
 
     $from_browser = $_SERVER['HTTP_USER_AGENT'];
     date_default_timezone_set("Asia/Calcutta");
@@ -52,3 +42,17 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 	
 
 ?>
+
+
+
+// For main site
+	// $http_client_id = $_SERVER['HTTP_CLIENT_IP'];
+	// $http_x_forwarded_for = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	// $remote_addr = $_SERVER['REMOTE_ADDR'];
+	// if(!empty($http_client_id)){
+	// 	$userIP = $http_client_id;
+	// }else if(!empty($http_x_forwarded_for)){
+	// 	$userIP = $http_x_forwarded_for;
+	// }else{
+	// 	$userIP = $remote_addr;
+	// }
