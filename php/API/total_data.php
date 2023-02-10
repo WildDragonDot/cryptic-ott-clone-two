@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 	// $link= new mysqli("localhost","finflix","finflix","finflix");
-	$link= new mysqli("localhost","root","","fin_2021");
+	$link= new mysqli("localhost","root","","crypto-db");
     $client = 'https://';
     $web = 'https://finflix.finstreet.in/videoPlayer.php'; 
     $VideoDetails = '/videodetails';
@@ -20,7 +20,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     $total_visitor = mysqli_query($link, "SELECT COUNT(*) FROM `visitor`");
     $total_visitor = mysqli_fetch_array($total_visitor);
     $total_visitor = $total_visitor[0];
-    $total_user = mysqli_query($link, "SELECT COUNT(*) FROM `metamask_login`");
+    $total_user = mysqli_query($link, "SELECT COUNT(*) FROM `login`");
     $total_user = mysqli_fetch_array($total_user);
     $total_user = $total_user[0];
     $total_donation = mysqli_query($link, "SELECT COUNT(*) FROM `donate_eth`");
